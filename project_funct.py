@@ -90,31 +90,30 @@ def menambahkanDatanilai():
             pilihsubMenu= input('Silahkan pilih sub menu tampilkan data: ')
             if pilihsubMenu == '1':
                 idSiswa= int(input('Masukkan ID Siswa: '))
-                index=0
+                ketemu = False
                 for i in range(len(daftarNilai)):
                     if daftarNilai[i]['ID Siswa'] == idSiswa:
                         print('Data sudah ada!')
-                        index+=1
-                        break
-                    else:
-                        nama= (input('Masukkan Nama: '))
-                        module1= int(input('Masukkan Nilai Module 1: '))
-                        module2= int(input('Masukkan Nilai Module 2: '))
-                        module3= int(input('Masukkan Nilai Module 3: '))
-                        tanya= (input('Apakah data akan disimpan?(Y/N) '))
-                        if tanya == 'Y':
-                            print('Data tersimpan')
-                            daftarNilai.append({
-                            'ID Siswa' : idSiswa,
-                            'Nama' : nama,
-                            'Nilai Module 1': module1,
-                            'Nilai Module 2': module2,
-                            'Nilai Module 3': module3
+                        ketemu = True
+                if ketemu== False:
+                    nama= (input('Masukkan Nama:'))
+                    module1= int(input('Masukkan Nilai Module 1: '))
+                    module2= int(input('Masukkan Nilai Module 2: '))
+                    module3= int(input('Masukkan Nilai Module 3: '))
+                    tanya= (input('Apakah data akan disimpan?(Y/N)'))
+                    if tanya == 'Y':
+                        print('Data tersimpan')
+                        daftarNilai.append({
+                        'ID Siswa' : idSiswa,
+                        'Nama' : nama,
+                        'Nilai Module 1': module1,
+                        'Nilai Module 2': module2,
+                        'Nilai Module 3': module3
                         })
-                            break
-                        elif tanya == 'N':
-                            print('Data tidak tersimpan')
-                            break
+                        break
+                    elif tanya == 'N':
+                        print('Data tidak tersimpan')
+                        break
             if pilihsubMenu == '2':
                 break
         
@@ -149,7 +148,7 @@ def mengubahDatanilai():
                     kolom= input('Masukkan kolom yang akan diubah: ')
                     if kolom == 'Nama':
                         a=(input('Nama = '))
-                        tanya1= input('Apakah data ingin disimpan? ')
+                        tanya1= input('Apakah data ingin disimpan?(Y/N) ')
                         if tanya1 == 'Y':
                             daftarNilai[index]['Nama']=a
                             print('Data Terupdate')
@@ -157,7 +156,7 @@ def mengubahDatanilai():
                             print('Data tidak tersimpan!')
                     elif kolom == 'Nilai Module 1':
                         b=(input('Nilai Module 1 = '))
-                        tanya1= input('Apakah data ingin disimpan? ')
+                        tanya1= input('Apakah data ingin disimpan?(Y/N) ')
                         if tanya1 == 'Y':
                             daftarNilai[index]['Nilai Module 1']=b
                             print('Data Terupdate')
@@ -165,7 +164,7 @@ def mengubahDatanilai():
                             print('Data tidak tersimpan!')
                     elif kolom == 'Nilai Module 2':
                         c=(input('Nilai Module 2 = '))
-                        tanya1= input('Apakah data ingin disimpan? ')
+                        tanya1= input('Apakah data ingin disimpan?(Y/N) ')
                         if tanya1 == 'Y':
                             daftarNilai[index]['Nilai Module 2']=c
                             print('Data Terupdate')
@@ -173,7 +172,7 @@ def mengubahDatanilai():
                             print('Data tidak tersimpan!')
                     elif kolom == 'Nilai Module 3':
                         d=(input('Nilai Module 3 = '))
-                        tanya1= input('Apakah data ingin disimpan? ')
+                        tanya1= input('Apakah data ingin disimpan?(Y/N) ')
                         if tanya1 == 'Y':
                             daftarNilai[index]['Nilai Module 3']=d
                             print('Data Terupdate')
@@ -208,7 +207,7 @@ def menghapusDatasiswa():
                 if ketemu==False:
                     print('Data tidak ada')
                     continue
-                tanya1= input('Apakah ada data ini ingin dihapus? ')
+                tanya1= input('Apakah ada data ini ingin dihapus?(Y/N) ')
                 if tanya1 == 'Y':
                     del daftarNilai[index]
                     print('Data Terhapus')
@@ -221,6 +220,8 @@ def menghapusDatasiswa():
 
 def keluar():
         print('Selesai')
+
+menampilkanDaftarnilai()
         
 
 
