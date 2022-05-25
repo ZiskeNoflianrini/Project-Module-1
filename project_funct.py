@@ -111,7 +111,7 @@ def menambahkanDatanilai():
                         'Nilai Module 2': module2,
                         'Nilai Module 3': module3
                         })
-                        break
+                        
                     elif tanya == 'N':
                         print('Data tidak tersimpan')
                         
