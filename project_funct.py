@@ -40,6 +40,7 @@ def menampilkanDaftarnilai():
             menghapusDatasiswa()
         elif(pilihanMenu=='5'):
             keluar()
+            break
         else:
             print('Pilihan yang anda masukkan salah!')
                 
@@ -96,11 +97,11 @@ def menambahkanDatanilai():
                         print('Data sudah ada!')
                         ketemu = True
                 if ketemu== False:
-                    nama= (input('Masukkan Nama:'))
+                    nama= (input('Masukkan Nama: '))
                     module1= int(input('Masukkan Nilai Module 1: '))
                     module2= int(input('Masukkan Nilai Module 2: '))
                     module3= int(input('Masukkan Nilai Module 3: '))
-                    tanya= (input('Apakah data akan disimpan?(Y/N)'))
+                    tanya= (input('Apakah data akan disimpan?(Y/N) '))
                     if tanya == 'Y':
                         print('Data tersimpan')
                         daftarNilai.append({
@@ -113,7 +114,7 @@ def menambahkanDatanilai():
                         break
                     elif tanya == 'N':
                         print('Data tidak tersimpan')
-                        break
+                        
             if pilihsubMenu == '2':
                 break
         
@@ -207,7 +208,7 @@ def menghapusDatasiswa():
                 if ketemu==False:
                     print('Data tidak ada')
                     continue
-                tanya1= input('Apakah ada data ini ingin dihapus?(Y/N) ')
+                tanya1= input('Apakah data ini ingin dihapus?(Y/N) ')
                 if tanya1 == 'Y':
                     del daftarNilai[index]
                     print('Data Terhapus')
@@ -220,8 +221,10 @@ def menghapusDatasiswa():
 
 def keluar():
         print('Selesai')
-
+    
 menampilkanDaftarnilai()
+
+
         
 
 
